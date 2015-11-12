@@ -2,14 +2,21 @@ close all;
 clear all;
 clc;
 
+
+
 a=1;
 b=-1.5;
-w=0.5;
+w=pi/10;
 
-init_x_p=-5;
+init_x_p=-9.5;
 init_x_p_dot=0;
 
-simtime=1.8;
+
+
+
+
+
+simtime=3.0;
 sim 'abg_x_p.slx'
 
 

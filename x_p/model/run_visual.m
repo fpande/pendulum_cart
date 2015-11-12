@@ -25,7 +25,6 @@ sim 'p_c.slx'
 %write to file
 
 
-
 out=[sim_state.time(:) sim_state.signals.values(:,1) sim_state.signals.values(:,2)];
 
 fileID = fopen('sim_pc_visual.dat','w');
