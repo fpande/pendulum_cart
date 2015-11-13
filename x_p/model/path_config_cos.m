@@ -4,7 +4,7 @@ y_c=0;
 
 
 a=1;
-w=pi/10;
+w=pi/5;
 
 %creating proposed path 
 x=-10:5/100:10;
