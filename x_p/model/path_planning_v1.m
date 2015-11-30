@@ -7,18 +7,19 @@ simming = 1;
 a=1;
 b=0;
 p=0;
+w_1=pi/5;
 w=pi/5;
 
 window=[-10 10 -1 1];
 
-init_x_p=-6;
-init_x_p_dot=10;
+init_x_p=-9.9;
+init_x_p_dot=1;
 
 
 
 
 
-
+%{
 %----alpha, beta, gamma motion generation-------
 
 simtime=0.55;
@@ -104,18 +105,13 @@ ylabel('\boldmath $\alpha(x_p)$','Interpreter','latex');
 line([min(sim_abg_x_p.signals.values);max(sim_abg_x_p.signals.values)],[0;0],'Color','r');
 
 
-
+%}
 
 
 
 
 
 %-----------------------
-
-
-
-
-
 
 
 
@@ -137,7 +133,7 @@ init_theta=atan2(init_x_p-init_x_c,y_p_init)
 %init_[x_c,theta]
 init_state = [init_x_c;init_theta];
 init_state_dot = [0;0];
-
+simtime=4;
 sim 'p_c_v1.slx'
 
 figure(4)

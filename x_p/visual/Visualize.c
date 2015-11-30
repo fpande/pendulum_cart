@@ -52,7 +52,7 @@ void *push_to_sample_from_file()
             pthread_mutex_lock(&visual_lock);
             VISUALSAMPLE = (VisualSample) { t, x_c, theta };
             pthread_mutex_unlock(&visual_lock);
-            usleep(100);
+            usleep(10000);
          }      
    }
 }

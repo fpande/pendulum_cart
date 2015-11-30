@@ -4,18 +4,15 @@ close all
 
 
 
+w_1=pi/5;
 
-a=0.5;
-b=0;
-p=-2.5;
-w=pi/10;
 
-x_p = -20:0.001:20;
+x_p = -10:0.001:10;
 dust = 1:length(x_p);
 
 for mg = 1:length(x_p);
-    alf1(mg)=alpha1(x_p(mg),a,b,p,w);
-    alf2(mg)=alpha2(x_p(mg),a,b,p,w);
+    alf1(mg)=alpha1(x_p(mg),w_1);
+    
 end
 
 
@@ -27,13 +24,12 @@ xlabel('x_p');
 ylabel('\alpha')
 
 
-
+for mg = 1:length(x_p);
+    path1(mg)=path(x_p(mg),w_1); 
+end
 subplot(2,1,2)
-plot(x_p(dust), alf2);
-title('version 2 (-)')
+plot(x_p(dust), path1)
 line([x_p(1);x_p(end)],[0;0],'Color','r');
-xlabel('x_p');
-ylabel('\alpha')
 
 
 

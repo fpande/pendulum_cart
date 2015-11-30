@@ -1,3 +1,16 @@
-a=0.3;
+
+clc
+clear all
+close all
+l=-1.2;
 w=pi/5;
-alpha(0,a,w)
+
+param=[l w];
+
+theta=pi:-0.001:-6*pi;
+
+for sample=1:length(theta)
+    ut(sample)=alpha(theta(sample),param);
+end
+
+plot(theta,ut)

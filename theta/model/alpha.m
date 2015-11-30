@@ -1,8 +1,10 @@
-function [ out ] = alpha( theta, a, w )
-%UNTITLED2 Summary of this function goes here
-%   Detailed explanation goes here
+function out = alpha( theta, param )
 
-out=((cos(theta)*sin(theta/a))/(a*w*sqrt(sin(theta/a)^2))) - sin(theta)*cos(theta) + 1;
+l=param(1);
+w=param(2);
 
+
+out = cos(theta)*(-cos(theta)*l*w+1)/w+1;
+    
 end
 

@@ -5,19 +5,20 @@ clc;
 
 
 a=1;
-b=-1.5;
-w=pi/10;
+b=0;
+w=pi/5;
+p=0;
 
-init_x_p=-9.5;
-init_x_p_dot=0;
-
-
-
+init_x_p=-9.9;
+init_x_p_dot=1;
 
 
 
-simtime=3.0;
-sim 'abg_x_p.slx'
+
+
+
+simtime=10.0;
+sim 'abg_x_p1.slx'
 
 
 %plotting
@@ -28,3 +29,7 @@ subplot(3,1,2)
 plot(sim_abg_x_p_dot.time, sim_abg_x_p_dot.signals.values)
 subplot(3,1,3)
 plot(sim_abg_x_p_ddot.time, sim_abg_x_p_ddot.signals.values);
+
+
+figure(2)
+plot(sim_abg_x_p.signals.values,sim_abg_x_p_dot.signals.values);

@@ -2,12 +2,16 @@ close all;
 clear all;
 clc;
 
-init_state = [-5;0.6*pi];
-init_state_dot = [0;0];
-a=0.4;
+init_state = [-5;pi];
+init_state_dot = [0; 0];
+
+a=-2.2;
+c=-1.5;
 w=pi/5;
 
-simtime=12;
+motion_parameters=[a c w];
+
+simtime=1;
 sim 'p_c.slx'
 
 
@@ -20,3 +24,4 @@ for sample = 1:length(sim_state.time)
 end
 fclose(fileID);
 
+plot(u.time, u.signals.values)
